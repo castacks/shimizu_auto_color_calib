@@ -1,0 +1,10 @@
+Data/
+data/
+Build/
+build/
+*.pyc
+*.png
+*.jpg
+*.code-workspace
+*.idea
+
