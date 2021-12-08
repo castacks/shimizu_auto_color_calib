@@ -131,7 +131,7 @@ int main(int argc, char **argv)
   // ROS paramters.
   GET_PARAM_DEFAULT(std::string, topic_color_ir, "/color_ir_inference", nh)
   GET_PARAM_DEFAULT(std::string, topic_in_image, "/xic_stereo/left/image_raw", nh)
-  GET_PARAM_DEFAULT(std::string, input_model, "/shimizu_auto_color_calib_ws/src/shimizu_auto_color_calib/deploy/card/card.xml", nh)
+  GET_PARAM_DEFAULT(std::string, input_model, "/ws/src/shimizu_auto_color_calib/deploy/card/card.xml", nh)
 
   // Publisher and subscriber.
   colorir_pub = nh.advertise<shimizu_auto_color_calib::colorir>(topic_color_ir, 2);

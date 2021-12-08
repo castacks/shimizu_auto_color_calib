@@ -30,7 +30,7 @@ docker run --rm \
     -it \
     --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" \
     --volume="$XAUTH:$XAUTH" \
-    --volume="/home/shimizu/auto_color_calib/shimizu_auto_color_calib_ws:/shimizu_auto_color_calib_ws" \
+    --volume="/home/shimizu/auto_color_calib/shimizu_auto_color_calib_ws/:/ws" \
     --volume="/dev/bus/usb:/dev/bus/usb" \
     --env="DISPLAY=$DISPLAY" \
     --env="QT_X11_NO_MITSHM=1" \
