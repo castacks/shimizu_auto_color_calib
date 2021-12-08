@@ -7,4 +7,5 @@ build/
 *.jpg
 *.code-workspace
 *.idea
+deploy/
 

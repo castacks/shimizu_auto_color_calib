@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<launch>
+    <arg name="topic_color_ir" default="/color_ir_inference" />
+    <arg name="topic_in_image" default="/xic_stereo/left/image_raw" />
+    <arg name="input_model"    default="$(find shimizu_auto_color_calib)/deploy/card/card.xml" />
+
+    <node pkg="shimizu_auto_color_calib" 
+          type="inference_engine_node" 
+          name="color_ir_pub_node_0" 
+          output="screen" required="true" >
+          <!-- launch-prefix="gdb -ex run - -args" > -->
+        <param name="topic_color_ir" value="$(arg topic_color_ir)" type="str" />
+        <param name="topic_in_image" value="$(arg topic_in_image)" type="str" />
+        <param name="input_model"    value="$(arg input_model)"    type="str" />
+    </node>
+
+    <node pkg="shimizu_auto_color_calib"
+          type="backend.py"
+          name="color_ir_backend_node_0"
+          output="screen" required="true" >
+    </node>
+
+    <node pkg="rqt_gui" 
+          type="rqt_gui"
+          name="auto_color_calib_vis" 
+          output="screen" 
+          args="--perspective-file $(find shimizu_auto_color_calib)/config/auto_color_calib.perspective" />
+</launch>
